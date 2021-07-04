@@ -106,11 +106,7 @@ class DataLoader(object):
         """read all cascade from training or testing files. """
         total_len = 0
         t_cascades = []
-        i = 0
         for line in open(filename):
-            if i > 10:
-                break
-            i += 1
             if len(line.strip()) == 0:
                 continue
             query, cascade = line.strip().split(' ', 1)
