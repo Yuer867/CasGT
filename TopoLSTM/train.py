@@ -39,7 +39,8 @@ with open(filename, 'w') as f:
     for v in seen_nodes:
         f.write('%s\n' % v)
 
-with open('u2idx.pickle', 'rb') as handle:
+filename = os.path.join(args.data_dir, 'u2idx.pickle')
+with open(filename, 'rb') as handle:
     node_to_index = pickle.load(handle)
 
 # read graph and node index

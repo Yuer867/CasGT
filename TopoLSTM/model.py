@@ -103,28 +103,8 @@ class TopoLSTM(nn.Module):
         decode = self.receiver_embedding(h_mean)  # 256, 3971
         return decode
 
-    def get_embedding(self,data_dir):
-        embedding_path = os.path.join(data_dir,'embedding.emd')
-        with open(embedding_path) as f:
-            for line in f:
-                if len(line.split(' ')) == 2:
-                    line = line.split(' ')
-                    node_number = int(line[0])
-                    node_dim = int(line[1])
-                    embedding_matrix = np.zeros(shape=(len(self.node_index),node_dim))
-                else:
-                    line = line.strip().split(' ')
-                    node = line[0]
-                    embedding = np.array([float(i) for i in line[1:]])
-                    try:    
-                        index = node_index[node]
-                        embedding_matrix[index,:] = embedding
-                    except:
-                        pass
-        return embedding_matrix
-
     def get_embedding_GRU(self, data_dir):
-        embedding_path = os.path.join(data_dir, 'model_e5.pth')
+        embedding_path = os.path.join(data_dir, 'model.pth')
         model = torch.load(embedding_path)['model']
         embedding = model['rnn_model.encoder.weight']
         return embedding
