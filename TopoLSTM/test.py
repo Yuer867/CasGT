@@ -93,7 +93,7 @@ with open(filename) as f:
                 predict_node = np.argmax(prob,axis=1)[-1]
                 node_to_index1.append(predict_node)
             final_answer = [index_to_node[index] for index in node_to_index1]
-            with open('answer.csv','a+') as f:
+            with open('data_small/answer.csv','a+') as f:
                 final_answer = ','.join(final_answer)
                 f.write(final_answer)
                 f.write('\n')

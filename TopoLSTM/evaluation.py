@@ -2,7 +2,7 @@ import numpy as np
 
 
 gold_dir = 'data_small/test.txt'
-pred_dir = 'answer/answer.csv'
+pred_dir = 'data_small/answer.csv'
 begin = 'data_small/test.csv'
 
 test_seq = []
