@@ -10,3 +10,13 @@ This is the final project of DATA130007.01 (Social Network Mining).
   python train.py --epoch 10
   
 2. 将保存的CasGT_10模型model.pth与data_small数据加入TopoLSTM文件夹中，运行
+
+  python train.py --data_dir 'data_small'
+  
+3. 模型测试
+
+  python test.py --data_dir 'data_small'
+  
+4. 结果评估
+
+  python evaluation.py
